@@ -1,0 +1,45 @@
+.notFound {
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../assets/bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding-left: 30px;
+    width: 100vw;
+
+    .container {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+
+        h1 {
+            color: #ff0000;
+            font-size: 85px;
+            font-weight: 800;
+
+            @media screen and (max-width: 900px) {
+                font-size: 2.5rem;
+            }
+        }
+
+        .text {
+            h2 {
+                color: #ffffff;
+                font-size: 2rem;
+                font-weight: 800;
+
+                @media screen and (max-width: 900px) {
+                    font-size: 1.5rem;
+                }
+            }
+
+            p {
+                color: #949494;
+                padding: 5px 0;
+            }
+        }
+    }
+}

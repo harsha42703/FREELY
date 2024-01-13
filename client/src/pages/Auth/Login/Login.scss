@@ -1,0 +1,68 @@
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../../assets/bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    
+  
+    form {
+      width: 360px;
+      padding: 100px 0px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    
+  
+      h1 {
+        color: gray;
+        margin-bottom: 20px;
+        font-size: 34px;
+      }
+  
+      label {
+        color: gray;
+        font-size: 18px;
+      }
+  
+      input,
+      textarea {
+        padding: 10px;
+        border-radius: 35px;
+        color: #fff;
+        background-color: #b8b8b80e;
+        border: 1px solid rgb(216, 214, 214);
+      }
+  
+      button {
+        border: none;
+        padding: 10px;
+        color: white;
+        font-weight: 500;
+        font-size: 18px;
+        border-radius: 35px;
+        background: rgba(135, 207, 235, 0.514);
+        border: 1px solid rgba(255, 255, 255, 0.517);
+        cursor: pointer;
+
+        &:disabled {
+          background-color: gray;
+          color: #fff;
+          cursor: not-allowed;
+        }
+      }
+  
+      span{
+        color: red;
+        font-size: 14px;
+      }
+
+      @media screen and (max-width: 600px) {
+        width: 80%;
+        margin: auto;
+      }
+    }
+  }
