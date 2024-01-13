@@ -19,10 +19,11 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.0.3",
     "satelize": "^0.2.0",
-    "uuid": "^9.0.1"
+    "uuid": "^9.0.1",
+       "dotenv": "^16.3.1",
   },
   "devDependencies": {
-    "dotenv": "^16.3.1",
+ 
     "nodemon": "^3.0.2"
   }
 }
