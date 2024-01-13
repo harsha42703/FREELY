@@ -23,7 +23,7 @@ const Navbar = () => {
 
   useEffect(() => {
     (async () => {
-      const { data } = await axiosFetch.get(`${API}/auth/me`);
+      const { data } = await axiosFetch.get(`${API}/api/auth/me`);
       setUser(data.user);
       setIsLoading(true);
       try {
