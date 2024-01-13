@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useLocation } from 'react-router-dom';
 import { axiosFetch } from '../../utils';
 import './Gigs.scss';
-
+const API = "https://freely-api.onrender.com"
 const Gigs = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [sortBy, setSortBy] = useState('sales');
@@ -21,7 +21,7 @@ const Gigs = () => {
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ['gigs'],
     queryFn: () =>
-      axiosFetch.get(`http://localhost:8080/api/gigs${search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sortBy}`)
+      axiosFetch.get(`${API}/api/gigs${search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sortBy}`)
         .then(({ data }) => {
           setCategory(data[0].category);
           return data;

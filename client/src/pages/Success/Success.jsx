@@ -4,7 +4,7 @@ import { axiosFetch } from "../../utils";
 import { useRecoilValue } from "recoil";
 import { userState } from "../../atoms";
 import "./Success.scss";
-
+const API = "https://freely-api.onrender.com"
 const Success = () => {
   const { search } = useLocation();
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const Success = () => {
   useEffect(() => {
     (async () => {
       try {
-        await axiosFetch.patch("/orders", { payment_intent });
+        await axiosFetch.patch(`${API}/api/orders`, { payment_intent });
         setTimeout(() => {
           navigate("/orders");
         }, 5000);

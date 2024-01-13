@@ -7,7 +7,7 @@ import { useRecoilValue } from 'recoil';
 import { userState } from '../../atoms';
 import { Loader } from '../../components';
 import './MyGigs.scss';
-
+const API = "https://freely-api.onrender.com"
 const MyGigs = () => {
   const user = useRecoilValue(userState);
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const MyGigs = () => {
   const { isLoading, error, data } = useQuery({
     queryKey: ['my-gigs'],
     queryFn: () =>
-      axiosFetch(`/gigs?userID=${user._id}`)
+      axiosFetch(`${API}/api/gigs?userID=${user._id}`)
         .then(({ data }) => {
           console.table(data)
           return data;
@@ -28,7 +28,7 @@ const MyGigs = () => {
 
   const mutation = useMutation({
     mutationFn: (_id) =>
-      axiosFetch.delete(`/gigs/${_id}`)
+      axiosFetch.delete(`${API}/api/gigs/${_id}`)
     ,
     onSuccess: () =>
       queryClient.invalidateQueries(['my-gigs'])

@@ -12,6 +12,7 @@ import axios from "axios";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+const API = "https://freely-api.onrender.com"
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [showPanel, setShowPanel] = useState(false);
@@ -22,7 +23,7 @@ const Navbar = () => {
 
   useEffect(() => {
     (async () => {
-      const { data } = await axiosFetch.get("http://localhost:8080/api/auth/me");
+      const { data } = await axiosFetch.get(`${API}/auth/me`);
       setUser(data.user);
       setIsLoading(true);
       try {
@@ -89,7 +90,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      await axiosFetch.post("http://localhost:8080/api/auth/logout");
+      await axiosFetch.post(`${API}/api/auth/logout`);
       localStorage.removeItem('user');
       setUser(null);
       navigate("/");

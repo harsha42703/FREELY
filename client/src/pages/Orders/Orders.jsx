@@ -6,7 +6,7 @@ import { useRecoilValue } from "recoil";
 import { userState } from "../../atoms";
 import { Loader } from '../../components';
 import "./Orders.scss";
-
+const API = "https://freely-api.onrender.com"
 const Orders = () => {
   const navigate = useNavigate();
   const user = useRecoilValue(userState);
@@ -19,7 +19,7 @@ const Orders = () => {
     queryKey: ["orders"],
     queryFn: () =>
       axiosFetch
-        .get(`/orders`)
+        .get(`${API}/api/orders`)
         .then(({ data }) => {
           return data;
         })
@@ -37,13 +37,13 @@ const Orders = () => {
       : order.buyerID;
 
     axiosFetch
-      .get(`/conversations/single/${sellerID}/${buyerID}`)
+      .get(`${API}/api/conversations/single/${sellerID}/${buyerID}`)
       .then(({ data }) => {
         navigate(`/message/${data.conversationID}`);
       })
       .catch(async ({ response }) => {
         if (response.status === 404) {
-          const { data } = await axiosFetch.post("/conversations", {
+          const { data } = await axiosFetch.post(`${API}/api/conversation`, {
             to: user.isSeller ? buyerID : sellerID,
             from: user.isSeller ? sellerID : buyerID,
           });

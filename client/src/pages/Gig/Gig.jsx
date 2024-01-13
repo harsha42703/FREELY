@@ -10,14 +10,14 @@ import { CarouselProvider, Slider, Slide, ImageWithZoom, ButtonBack, ButtonNext,
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
-
+const API = "https://freely-api.onrender.com"
 const Gig = () => {
   const { _id } = useParams();
 
   const { isLoading, error, data } = useQuery({
     queryKey: ['gig'],
     queryFn: () =>
-      axios.get(`http://localhost:8080/api/gigs/single/${_id}`)
+      axiosFetch.get(`${API}/api/gigs/single/${_id}`)
         .then(({ data }) => {
           data.images.unshift(data.cover);
           return data;

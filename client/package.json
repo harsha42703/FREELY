@@ -1,7 +1,7 @@
 {
   "name": "client",
   "private": true,
-  "proxy": "http://localhost:8080",
+  "proxy": "https://freely-api.onrender.com",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

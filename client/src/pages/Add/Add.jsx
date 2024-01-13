@@ -8,7 +8,7 @@ import { axiosFetch, generateImageURL } from '../../utils';
 import { useRecoilValue } from 'recoil';
 import { userState } from '../../atoms';
 import './Add.scss';
-
+const API = "https://freely-api.onrender.com"
 const Add = () => {
   const user = useRecoilValue(userState);
   const [state, dispatch] = useReducer(gigReducer, initialState);
@@ -25,7 +25,7 @@ const Add = () => {
 
   const mutation = useMutation({
     mutationFn: (gig) =>
-      axiosFetch.post('/gigs', gig)
+      axiosFetch.post(`${API}/api/gigs`, gig)
       .then(({data}) => {
         return data;
       })

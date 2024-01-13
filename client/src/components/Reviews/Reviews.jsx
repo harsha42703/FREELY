@@ -5,7 +5,7 @@ import { Review, Loader } from '..';
 import { axiosFetch } from '../../utils';
 import toast from 'react-hot-toast';
 import './Reviews.scss';
-
+const API = "https://freely-api.onrender.com"
 const Reviews = (props) => {
     const { gigID } = props;
     const navigation = useNavigate();
@@ -13,7 +13,7 @@ const Reviews = (props) => {
     const { isLoading, error, data, refetch } = useQuery({
         queryKey: ['reviews'],
         queryFn: () =>
-            axiosFetch.get(`/reviews/${gigID}`)
+            axiosFetch.get(`${API}/api/reviews/${gigID}`)
                 .then(({ data }) => {
                     return data;
                 })
@@ -24,7 +24,7 @@ const Reviews = (props) => {
 
     const mutation = useMutation({
         mutationFn: (review) =>
-            axiosFetch.post('/reviews', review)
+            axiosFetch.post('${API}/api/reviews', review)
             .then(({data}) => {
                 return data;
             })

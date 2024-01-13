@@ -10,7 +10,7 @@ const initialState = {
   username: '',
   password: ''
 }
-
+const API = "https://freely-api.onrender.com"
 const Login = () => {
   const [formInput, setFormInput] = useState(initialState);
   const [error, setError] = useState(null);
@@ -42,7 +42,7 @@ const Login = () => {
 
     setLoading(true);
     try {
-      const { data } = await axiosFetch.post('http://localhost:8080/api/auth/login', formInput);
+      const { data } = await axiosFetch.post(`${API}/api/auth/login`, formInput);
       localStorage.setItem('user', JSON.stringify(data.user));
       setUser(data.user);
       toast.success("Welcome back!", {
