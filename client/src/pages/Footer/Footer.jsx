@@ -66,7 +66,7 @@ const Footer = () => {
               <img src="./media/instagram.png" alt="" />
             </div>
             <div className="link">
-              <img src=".media/language.png" alt="" />
+              <img src="./media/language.png" alt="" />
               <span>English</span>
             </div>
             <div className="link">
