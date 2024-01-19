@@ -9,10 +9,10 @@ const GigCard = (props) => {
       <div className="gigCard">
         <img src={data.cover} alt="" />
         <div className="info">
-          <div className="user">
+{/*           <div className="user">
             <img src={data.images || './media/noavatar.png'} alt="" />
             <span>{data.username}</span>
-          </div>
+          </div> */}
           <p>{data.title}</p>
           <div className="star">
             <img src="./media/star.png" alt="" />
