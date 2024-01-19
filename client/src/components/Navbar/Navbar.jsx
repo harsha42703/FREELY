@@ -139,7 +139,7 @@ const Navbar = () => {
               {user && (
                 <div className="user" onClick={() => setShowPanel(!showPanel)}>
                   <img src={"https://t3.ftcdn.net/jpg/01/43/34/30/360_F_143343053_IEBnyKmVJYr1i2tPtBX79ybBAFCNZzEi.jpg"} />
-                  <span>{Harsha}</span>
+                  <span>Harsha</span>
                   {showPanel && (
                     <div className="options">
                       {user?.isSeller && (
