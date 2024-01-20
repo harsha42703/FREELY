@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import './Register.scss'
 import axios from 'axios';
-
+const API = "https://freely-api.onrender.com"
 const Register = () => {
   const navigate = useNavigate();
   const [image, setImage] = useState(null);
@@ -39,7 +39,7 @@ const Register = () => {
     setLoading(true);
     try {
       console.log("this is frominpiut",formInput);
-      const { data } = await axios.post('http://localhost:8080/api/auth/register', { ...formInput, image:"lokesh katari"});
+      const { data } = await axios.post(`${API}/api/auth/register`, { ...formInput, image:"lokesh katari"});
       console.log(data);
       toast.success('Registration successful!');
       setLoading(false);
