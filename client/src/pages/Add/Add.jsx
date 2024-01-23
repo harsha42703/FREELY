@@ -100,7 +100,7 @@ const Add = () => {
             <input name='title' type="text" placeholder="e.g. I will do something I'm really good at" onChange={handleFormCange} />
 
             <label htmlFor="">Category</label>
-            <select name="category" onChange={handleFormCange}>
+            <select name="category" style={{color:"black"}} onChange={handleFormCange}>
               <option value=''>Category</option>
               {
                 cards.map((item) => (
